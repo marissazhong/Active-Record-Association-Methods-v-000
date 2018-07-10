@@ -11,6 +11,8 @@ class Genre < ActiveRecord::Base
   end
 
   def all_artist_names
-    # return an array of strings containing every musician's name
+    all_artists = []
+    self.artists.map {|artist| artist.name << all_artists}
+    all_artists
   end
 end
